@@ -53,9 +53,9 @@
                   Grid.Column="0"
                   Grid.Row="1"
                   AutoGenerateColumns="True"
-                  HorizontalAlignment="Stretch"
-                  DataContext="{Binding LocalDrives}"
-                  ItemsSource="{Binding LocalDrives}">
+                  HorizontalAlignment="Stretch">
+                  <!--DataContext="{Binding LocalDrives}"
+                  ItemsSource="{Binding LocalDrives}"-->
 
         </DataGrid>
 
