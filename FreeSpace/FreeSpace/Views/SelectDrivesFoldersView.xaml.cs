@@ -23,5 +23,10 @@ namespace FreeSpace.Views
         {
             InitializeComponent();
         }
+
+        private void AllDrives_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

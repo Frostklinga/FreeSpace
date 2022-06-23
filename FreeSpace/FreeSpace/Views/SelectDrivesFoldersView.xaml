@@ -27,7 +27,8 @@
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top">
             <RadioButton Name="AllDrives"
-                         Content="All local drives" />
+                         Content="All local drives"
+                         IsChecked="True"/>
             <RadioButton Name="IndividualDrives"
                          Content="Individual drives" />
         </StackPanel>
