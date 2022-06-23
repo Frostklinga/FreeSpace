@@ -7,7 +7,8 @@
         mc:Ignorable="d"
         Title="Select drives or folders"
         Height="450"
-        Width="800">
+        Width="800"
+        Background="Gray">
     <Grid>
 
         <Grid.ColumnDefinitions>
