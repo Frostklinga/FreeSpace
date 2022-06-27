@@ -9,10 +9,11 @@ namespace FreeSpace.Models
 {
     public class DrivesAndFoldersModel
     {
-        public DrivesAndFoldersModel()
+        public List<DriveInfo> Drives { get; private set; } = DriveInfo.GetDrives();
+
+        private List<DriveInfo> GetDrives()
         {
-            
+
         }
-        public DriveInfo[] Drives { get; private set; } = DriveInfo.GetDrives();
     }
 }
