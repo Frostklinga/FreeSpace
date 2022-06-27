@@ -9,11 +9,16 @@ namespace FreeSpace.Models
 {
     public class CustomizedDriveInfo
     {
-        public string Name { get; set; }
-        public decimal Total { get; private set; }
-        public decimal Free { get; private set; }
+        public CustomizedDriveInfo(DriveInfo info)
+        {
+            Name = info.Name;
+            Total = new CustomDriveSize()
+        }
+        public string Name { get; private set; }
+        public CustomDriveSize Total { get; private set; }
+        public CustomDriveSize Free { get; private set; }
         public decimal PercentUsed { get; private set; }
         public DriveType DriveType { get; private set; }
-        public bool Available { get; private set; }
+        public bool IsAvailable { get; private set; }
     }
 }
