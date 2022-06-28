@@ -7,13 +7,12 @@ using System.Collections.Generic;
 
 namespace FreeSpace.ViewModels;
 
-[INotifyPropertyChanged]
 partial class SelectFilesFoldersViewModel
 {
     public List<CustomDriveInfo> Drives { get; }
     public SelectFilesFoldersViewModel()
     {
-        Drives = GetDrivesHelper.
+        Drives = GetDrivesHelper.GetAllDrives();
     }
     
 }
