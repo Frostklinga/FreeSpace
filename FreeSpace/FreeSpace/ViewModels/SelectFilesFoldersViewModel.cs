@@ -2,15 +2,18 @@
 using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.ComponentModel;
 using FreeSpace.Models;
-namespace FreeSpace.ViewModels
+using FreeSpace.HelperFunctions;
+using System.Collections.Generic;
+
+namespace FreeSpace.ViewModels;
+
+[INotifyPropertyChanged]
+partial class SelectFilesFoldersViewModel
 {
-    [INotifyPropertyChanged]
-    partial class SelectFilesFoldersViewModel
+    public List<CustomDriveInfo> Drives { get; }
+    public SelectFilesFoldersViewModel()
     {
-        public SelectFilesFoldersViewModel()
-        {
-            CustomDriveInfo customDriveInfo = new CustomDriveInfo();
-        }
-        
+        Drives = GetDrivesHelper.
     }
+    
 }
