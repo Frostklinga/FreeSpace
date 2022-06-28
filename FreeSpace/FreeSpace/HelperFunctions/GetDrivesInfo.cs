@@ -10,13 +10,14 @@ namespace FreeSpace.HelperFunctions
 {
     public static class GetDrivesInfo
     {
-        public static List<CustomizedDriveInfo> GetListWitHCustominzedDriveInfo()
+        public static List<CustomDriveInfo> GetListWithCustominzedDriveInfo()
         {
             var drives = DriveInfo.GetDrives();
-            List<CustomizedDriveInfo> ListOfCustomizedDriveInfo = new List<CustomizedDriveInfo>();
+            List<CustomDriveInfo> ListOfCustomDriveInfo = new List<CustomDriveInfo>();
             foreach(var drive in drives)
             {
-                drive.
+                CustomDriveInfo customDriveInfo = new CustomDriveInfo(drive);
+                ListOfCustomDriveInfo.Add(customDriveInfo);
             }
         }
 

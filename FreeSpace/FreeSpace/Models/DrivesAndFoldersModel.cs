@@ -13,9 +13,9 @@ namespace FreeSpace.Models
         {
             Drives = GetDrives();
         }
-        public List<CustomizedDriveInfo> Drives { get; private set; }
+        public List<CustomDriveInfo> Drives { get; private set; }
 
-        private List<CustomizedDriveInfo> GetDrives()
+        private List<CustomDriveInfo> GetDrives()
         {
             foreach(var drive in DriveInfo.GetDrives)
             {
