@@ -20,6 +20,5 @@ namespace FreeSpace.HelperFunctions
                 ListOfCustomDriveInfo.Add(customDriveInfo);
             }
         }
-
     }
 }

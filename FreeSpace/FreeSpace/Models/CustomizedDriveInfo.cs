@@ -14,7 +14,7 @@ namespace FreeSpace.Models
             Name = info.Name;
             Total = new CustomDriveSize(info.TotalSize);
             Free = new CustomDriveSize(info.AvailableFreeSpace);
-            PercentUsed = Convert.ToDouble(info.AvailableFreeSpace/info.TotalSize);
+            PercentUsed = Convert.ToDouble(info.AvailableFreeSpace / info.TotalSize);
             PercentUsed = Math.Round(PercentUsed, PercentDecimals);
             DriveType = info.DriveType;
             IsAvailable = info.IsReady;

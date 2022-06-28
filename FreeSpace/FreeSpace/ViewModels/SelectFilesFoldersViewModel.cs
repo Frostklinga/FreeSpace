@@ -1,7 +1,7 @@
 ﻿using CommunityToolkit.Mvvm;
 using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.ComponentModel;
-
+using FreeSpace.Models;
 namespace FreeSpace.ViewModels
 {
     [INotifyPropertyChanged]
@@ -9,7 +9,8 @@ namespace FreeSpace.ViewModels
     {
         public SelectFilesFoldersViewModel()
         {
-
+            CustomDriveInfo customDriveInfo = new CustomDriveInfo();
         }
+        
     }
 }

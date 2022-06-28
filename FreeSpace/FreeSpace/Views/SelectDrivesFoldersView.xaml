@@ -54,9 +54,15 @@
                   Margin="10,10,10,10"
                   Grid.Column="0"
                   Grid.Row="1"
-                  AutoGenerateColumns="True"
+                  AutoGenerateColumns="False"
                   HorizontalAlignment="Stretch">
-                  <!--DataContext="{Binding LocalDrives}"
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" />
+                <DataGridTextColumn Header="Total" />
+                <DataGridTextColumn Header="Free" />
+                <DataGridTextColumn Header="Used (%)" />
+            </DataGrid.Columns>
+                <!--DataContext="{Binding LocalDrives}"
                   ItemsSource="{Binding LocalDrives}"-->
 
         </DataGrid>
