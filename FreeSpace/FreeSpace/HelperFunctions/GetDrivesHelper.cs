@@ -16,7 +16,8 @@ public static class GetDrivesHelper
         foreach (var drive in DriveInfo.GetDrives())
         {
             var customDriveInfo = new CustomDriveInfo(drive);
-            customDriveInfoList.Add(customDriveInfo);
+            if(customDriveInfo.IsAvailable)
+                customDriveInfoList.Add(customDriveInfo);
         }
         return customDriveInfoList;
     }

@@ -19,6 +19,7 @@ namespace FreeSpace.HelperFunctions
                 CustomDriveInfo customDriveInfo = new CustomDriveInfo(drive);
                 ListOfCustomDriveInfo.Add(customDriveInfo);
             }
+            return ListOfCustomDriveInfo;
         }
     }
 }

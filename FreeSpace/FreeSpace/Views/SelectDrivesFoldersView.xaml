@@ -2,17 +2,17 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:FreeSpace.Views"
-        xmlns:viewmodels="clr-namespace:FreeSpace.ViewModels"
-        d:DataContext="{d:DesignInstance Type=viewmodels:SelectFilesFoldersViewModel}"
+        xmlns:local="clr-namespace:FreeSpace"
+        xmlns:viewmodel="clr-namespace:FreeSpace.ViewModels"
         mc:Ignorable="d"
         Title="Select drives or folders"
         Height="450"
         Width="800"
         Background="Gray">
-    
+    <Window.DataContext>
+        <viewmodel:SelectFilesFoldersViewModel />
+    </Window.DataContext>
     <Grid>
 
         <Grid.ColumnDefinitions>
@@ -31,7 +31,7 @@
                     VerticalAlignment="Top">
             <RadioButton Name="AllDrives"
                          Content="All local drives"
-                         IsChecked="True"/>
+                         IsChecked="True" />
             <RadioButton Name="IndividualDrives"
                          Content="Individual drives" />
         </StackPanel>
@@ -58,14 +58,15 @@
                   Grid.Column="0"
                   Grid.Row="1"
                   AutoGenerateColumns="False"
-                  HorizontalAlignment="Stretch">
+                  HorizontalAlignment="Stretch"
+                  DataContext="{Binding Drives}">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Name" />
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
                 <DataGridTextColumn Header="Total" />
                 <DataGridTextColumn Header="Free" />
                 <DataGridTextColumn Header="Used (%)" />
             </DataGrid.Columns>
-                <!--DataContext="{Binding LocalDrives}"
+            <!--DataContext="{Binding LocalDrives}"
                   ItemsSource="{Binding LocalDrives}"-->
 
         </DataGrid>

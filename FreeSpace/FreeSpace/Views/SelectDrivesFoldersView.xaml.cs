@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using FreeSpace.ViewModels;
 
 namespace FreeSpace.Views
 {
@@ -22,6 +23,7 @@ namespace FreeSpace.Views
         public SelectDrivesFoldersView()
         {
             InitializeComponent();
+            DataContext = new SelectFilesFoldersViewModel();
         }
 
         private void AllDrives_Checked(object sender, RoutedEventArgs e)
