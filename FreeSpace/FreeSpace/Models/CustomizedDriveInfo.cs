@@ -10,15 +10,17 @@ namespace FreeSpace.Models
 {
     public class CustomDriveInfo
     {
+        const int CONVERT_TO_PERCENT = 100;
         public CustomDriveInfo(DriveInfo info)
         {
             try
             {
                 InitializeValues(info);
             }
-            catch(IOException ) 
+            catch(IOException ioe) 
             {
-                DriveNotAvailable();
+                Debug.WriteLine($"Caught an exception in class {nameof(CustomDriveInfo)}. Message: {ioe.Message}");
+                Name = $"{ioe.Message}";
             }
             catch(Exception e)
             {
@@ -30,16 +32,14 @@ namespace FreeSpace.Models
             Name = info.Name;
             Total = new CustomDriveSize(info.TotalSize);
             Free = new CustomDriveSize(info.AvailableFreeSpace);
-            PercentUsed = Convert.ToDouble(info.AvailableFreeSpace / info.TotalSize);
+            PercentUsed = Convert.ToDouble(info.AvailableFreeSpace) / Convert.ToDouble(info.TotalSize);
             PercentUsed = Math.Round(PercentUsed, PercentDecimals);
+            PercentUsed = PercentUsed * CONVERT_TO_PERCENT;
             DriveType = info.DriveType;
             IsAvailable = info.IsReady;
             RootDirectory = info.RootDirectory;
         }
-        private void DriveNotAvailable()
-        {
-            Name = "";
-        }
+        
         public string ?Name { get; private set; } 
         public CustomDriveSize ?Total { get; private set; }
         public CustomDriveSize ?Free { get; private set; }
@@ -48,6 +48,6 @@ namespace FreeSpace.Models
         public bool IsAvailable { get; private set; } = false;
         public DirectoryInfo ?RootDirectory { get; private set; }
 
-        private int PercentDecimals { get; set; } = 2;
+        private int PercentDecimals { get; set; } = 4;
     }
 }

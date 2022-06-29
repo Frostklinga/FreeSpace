@@ -14,16 +14,19 @@ public class CustomDriveSize
         double s = (double)size;
         Size = ConvertToRoundedPrefix(size, prefix);
         Prefix = prefix;
+        SizeAndPrefix = $"{Size} {Prefix}";
     }
     public CustomDriveSize(long size)
     {
         double s = (double)size;
         Prefix = CalculatePrefix(size);
         Size = ConvertToRoundedPrefix(size, Prefix);
+        SizeAndPrefix = $"{Size} {Prefix}";
     }
 
     public double Size { get; private set; }
     public SizePrefix Prefix { get; private set; }
+    public string SizeAndPrefix { get; private set; }
     public int SizeDecimals { get; set; } = 2;
     
     private SizePrefix CalculatePrefix(double size)

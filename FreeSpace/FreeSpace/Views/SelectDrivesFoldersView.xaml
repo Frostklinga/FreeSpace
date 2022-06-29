@@ -59,16 +59,18 @@
                   Grid.Row="1"
                   AutoGenerateColumns="False"
                   HorizontalAlignment="Stretch"
-                  DataContext="{Binding Drives}">
+                  AlternatingRowBackground="Aqua"
+                  ItemsSource="{Binding Drives}">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
-                <DataGridTextColumn Header="Total" />
-                <DataGridTextColumn Header="Free" />
-                <DataGridTextColumn Header="Used (%)" />
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}"  />
+                <DataGridTextColumn Header="Total" 
+                                    Binding="{Binding Total.SizeAndPrefix}"/>
+                <DataGridTextColumn Header="Free"
+                                    Binding="{Binding Free.SizeAndPrefix}" />
+                <DataGridTextColumn Header="Used (%)"
+                                    Binding="{Binding PercentUsed}" />
             </DataGrid.Columns>
-            <!--DataContext="{Binding LocalDrives}"
-                  ItemsSource="{Binding LocalDrives}"-->
-
+            
         </DataGrid>
 
         <StackPanel Grid.Row="2"
