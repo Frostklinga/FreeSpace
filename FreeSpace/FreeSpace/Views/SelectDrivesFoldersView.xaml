@@ -13,7 +13,15 @@
     <Window.DataContext>
         <viewmodel:SelectFilesFoldersViewModel />
     </Window.DataContext>
+    <Window.Resources>
+        <Style>
+            <Style.Triggers>
+                
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
     <Grid>
+    
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="3*" />
@@ -44,12 +52,13 @@
                     Name="ProcessDriveFolderSelection"
                     Width="50"
                     Height="20"
-                    Content="Ok"></Button>
+                    Content="Ok" />
             <Button HorizontalAlignment="Right"
                     Name="CancelDriveFolderSelection"
                     Width="50"
                     Height="20"
-                    Content="Cancel"></Button>
+                    Content="Cancel"
+                    Click="OnClose"/>
         </StackPanel>
 
         <DataGrid Name="SelectDriveDataGrid"
@@ -78,15 +87,18 @@
                     Margin="0,0,0,10">
             <RadioButton Name="SelectFolder"
                          Content="Select a folder"
-                         Margin="10,0,0,0" />
+                         Margin="10,0,0,0"
+                         Command=""/>
             <StackPanel Orientation="Horizontal">
                 <TextBox x:Name="SelectFolderTextbox"
                          Width="200"
-                         Margin="10,0,0,0" />
+                         Margin="10,0,0,0" 
+                         IsEnabled="False"/>
                 <Button x:Name="SelectFolderButton"
                         Content="..."
                         Width="40"
-                        Margin="10,0,0,0" />
+                        Margin="10,0,0,0" 
+                        IsEnabled="False"/>
             </StackPanel>
         </StackPanel>
     </Grid>

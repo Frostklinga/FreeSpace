@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using FreeSpace.ViewModels;
+using CommunityToolkit.Mvvm;
 
 namespace FreeSpace.Views
 {
@@ -25,10 +26,10 @@ namespace FreeSpace.Views
             InitializeComponent();
             DataContext = new SelectFilesFoldersViewModel();
         }
-
-        private void AllDrives_Checked(object sender, RoutedEventArgs e)
+        
+        public void OnClose(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
     }
 }
